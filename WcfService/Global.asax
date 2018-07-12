@@ -10,6 +10,8 @@ namespace WcfService
     public class Global : System.Web.HttpApplication
     {
 
+        //<package id="Autofac" version="3.5.2" targetFramework="net45" />
+        //<package id="Autofac.Wcf" version="4.0.0" targetFramework="net45" />
         protected void Application_Start(object sender, EventArgs e)
         {
             Bootstrapper.RegisterIoc();
