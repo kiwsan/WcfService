@@ -1,13 +1,11 @@
-using Autofac;
+﻿using Autofac;
 using Autofac.Integration.Wcf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Web;
-using System.Web.Compilation;
 
-namespace WcfService
+namespace WcfService.Configurations
 {
     internal static class Bootstrapper
     {
@@ -16,10 +14,10 @@ namespace WcfService
             var builder = new ContainerBuilder();
 
             // Register manager implementations.
-            builder.RegisterType<AppConfigurationService>().As<IAppConfigurationService>().SingleInstance();
+            builder.RegisterType<Service>().As<IService>().SingleInstance();
 
             // Register service implementations.
-            builder.RegisterType<Service1>().SingleInstance();
+            builder.RegisterType<Service>().SingleInstance();
 
             // Set the dependency resolver.
             var container = builder.Build();
